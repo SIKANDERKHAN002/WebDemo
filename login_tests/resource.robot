@@ -17,6 +17,7 @@ ${WELCOME URL}    http://${SERVER}/welcome.html
 ${ERROR URL}      http://${SERVER}/error.html
 ${ExtraArgument}  Dell
 ${OneMoreTesting} Test
+${ThisIsThird}    Third
 
 *** Keywords ***
 Open Browser To Login Page
