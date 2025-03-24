@@ -7,23 +7,25 @@ Documentation     A resource file with reusable keywords and variables.
 Library           SeleniumLibrary
 
 *** Variables ***
-${SERVER}         localhost:9595
-${BROWSER}        Firefox
-${DELAY}          0
-${VALID USER}     demo
+#${SERVER}         localhost:9595
+${SERVER}          127.0.0.1:9595
+#${BROWSER}        Firefox
+#${BROWSER}        headlessfirefox
+${DELAY}           0
+${VALID USER}      demo
 ${VALID PASSWORD}    mode
-${LOGIN URL}      http://${SERVER}/
-${WELCOME URL}    http://${SERVER}/welcome.html
-${ERROR URL}      http://${SERVER}/error.html
-${ExtraArgument}  Dell
-${OneMoreTesting} Test
-${ThisIsThird}    Third
+${LOGIN URL}       http://${SERVER}/
+${WELCOME URL}     http://${SERVER}/welcome.html
+${ERROR URL}       http://${SERVER}/error.html
+#${ExtraArgument}   Dell
+#${OneMoreTesting}  Test
+#${ThisIsThird}     Third
 
 *** Keywords ***
 Open Browser To Login Page
     Log   ${LOGIN URL}
     Log   ${SERVER}   
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${LOGIN URL}    ${BROWSER}   
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
