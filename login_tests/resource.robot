@@ -21,6 +21,8 @@ ${ThisIsThird}    Third
 
 *** Keywords ***
 Open Browser To Login Page
+    Log   ${LOGIN URL}
+    Log   ${SERVER}   
     Open Browser    ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
