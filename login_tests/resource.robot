@@ -25,7 +25,7 @@ ${ERROR URL}       http://${SERVER}/error.html
 Open Browser To Login Page
     Log   ${LOGIN URL}
     Log   ${SERVER}   
-    Open Browser    ${LOGIN URL}    ${BROWSER}   
+    Open Browser    https://www.saucedemo.com/v1/    ${BROWSER}   
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
