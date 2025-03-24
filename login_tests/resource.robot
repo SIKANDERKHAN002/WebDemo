@@ -10,7 +10,7 @@ Library           SeleniumLibrary
 #${SERVER}         localhost:9595
 ${SERVER}          https://www.saucedemo.com/v1/
 #${BROWSER}        Firefox
-#${BROWSER}        headlessfirefox
+${BROWSER}        headlessfirefox
 ${DELAY}           0
 ${VALID USER}      demo
 ${VALID PASSWORD}    mode
