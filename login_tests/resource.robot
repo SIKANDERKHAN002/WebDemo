@@ -8,13 +8,13 @@ Library           SeleniumLibrary
 
 *** Variables ***
 #${SERVER}         localhost:9595
-${SERVER}          https://www.saucedemo.com/v1/
+${SERVER}          www.saucedemo.com
 #${BROWSER}        Firefox
 ${BROWSER}        headlessfirefox
 ${DELAY}           0
 ${VALID USER}      demo
 ${VALID PASSWORD}    mode
-${LOGIN URL}       http://${SERVER}/
+${LOGIN URL}       https://${SERVER}/
 ${WELCOME URL}     http://${SERVER}/welcome.html
 ${ERROR URL}       http://${SERVER}/error.html
 #${ExtraArgument}   Dell
@@ -25,7 +25,7 @@ ${ERROR URL}       http://${SERVER}/error.html
 Open Browser To Login Page
     Log   ${LOGIN URL}
     Log   ${SERVER}   
-    Open Browser    https://www.saucedemo.com/v1/    ${BROWSER}   
+    Open Browser    https://www.saucedemo.com   firefox
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
