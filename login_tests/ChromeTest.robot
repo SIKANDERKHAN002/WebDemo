@@ -19,7 +19,6 @@ Headless Chrome Example
 *** Keywords ***
 Open Headless Browser
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    ${DRIVER PATH}=    Evaluate    sys.modules['WebDriverManager'].ChromeDriverManager().install()    sys, WebDriverManager
     Call Method    ${options}    add_argument    --headless
     Call Method    ${options}    add_argument    --disable-gpu
     Call Method    ${options}    add_argument    --no-sandbox
