@@ -8,8 +8,8 @@ Library           SeleniumLibrary
 Library           OperatingSystem
 
 *** Variables ***
-#${SERVER}         localhost:9595
-${SERVER}          www.saucedemo.com
+${SERVER}         localhost:9595
+#${SERVER}          www.saucedemo.com
 #${BROWSER}        Firefox
 ${BROWSER}        headlessfirefox
 ${DELAY}           0
@@ -37,7 +37,7 @@ Open Browser To Login Page
     Create WebDriver    Chrome    options=${options}   
     #Open Browser    https://www.saucedemo.com   Chrome
     #Open Browser    https://www.saucedemo.com   Chrome
-    Go To    https://www.saucedemo.com
+    Go To    ${SERVER}
     #Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
