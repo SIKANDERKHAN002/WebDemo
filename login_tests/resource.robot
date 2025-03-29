@@ -15,7 +15,8 @@ ${BROWSER}        headlessfirefox
 ${DELAY}           0
 ${VALID USER}      demo
 ${VALID PASSWORD}    mode
-${LOGIN URL}       https://${SERVER}/
+#${LOGIN URL}       https://${SERVER}/
+${LOGIN URL}       ${SERVER}
 ${WELCOME URL}     http://${SERVER}/welcome.html
 ${ERROR URL}       http://${SERVER}/error.html
 #${ExtraArgument}   Dell
