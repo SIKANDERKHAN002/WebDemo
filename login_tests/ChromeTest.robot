@@ -11,9 +11,9 @@ ${URL}        https://www.saucedemo.com
 Headless Chrome Example
     Open Headless Browser
     #Open Browser   ${URL}   ${BROWSER}
-    Go To ${URL}
+    Go To    ${URL}
     Capture Page Screenshot
-    sleep   30s
+    sleep   10s
     Close Browser
 
 *** Keywords ***
