@@ -28,8 +28,9 @@ Open Browser To Login Page
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${options}    add_argument    --incognito
     Create WebDriver    Chrome    options=${options}   
+    Open Browser    https://www.saucedemo.com   Chrome
     #Open Browser    https://www.saucedemo.com   Chrome
-    Go To    https://www.saucedemo.com
+    #Go To    https://www.saucedemo.com
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
