@@ -24,8 +24,12 @@ ${ERROR URL}       http://${SERVER}/error.html
 *** Keywords ***
 Open Browser To Login Page
     Log   ${LOGIN URL}
-    Log   ${SERVER}   
-    Open Browser    https://www.saucedemo.com   Chrome
+    Log   ${SERVER}
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${options}    add_argument    --incognito
+    Create WebDriver    Chrome    options=${options}   
+    #Open Browser    https://www.saucedemo.com   Chrome
+    Go To    https://www.saucedemo.com
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
