@@ -36,8 +36,8 @@ Open Browser To Login Page
     #Call Method     ${options}    add_argument    --incognito
     Create WebDriver    Chrome    options=${options}   
     #Open Browser    https://www.saucedemo.com   Chrome
-    Open Browser    https://www.saucedemo.com   Chrome
-    #Go To    https://www.saucedemo.com
+    #Open Browser    https://www.saucedemo.com   Chrome
+    Go To    https://www.saucedemo.com
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
