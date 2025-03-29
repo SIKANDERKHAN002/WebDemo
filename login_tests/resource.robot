@@ -25,7 +25,7 @@ ${ERROR URL}       http://${SERVER}/error.html
 Open Browser To Login Page
     Log   ${LOGIN URL}
     Log   ${SERVER}
-    ${temp_dir}=    Evaluate      tempfile.mkdtemp()    tempfile
+    ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir=login_tests)    tempfile
     Log   ${temp_dir}
     ${options}=     Evaluate      sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${options}    add_argument    --user-data-dir=${temp_dir}
