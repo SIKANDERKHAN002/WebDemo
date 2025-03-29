@@ -8,7 +8,7 @@ Library           SeleniumLibrary
 Library           OperatingSystem
 
 *** Variables ***
-${SERVER}         localhost:9595
+${SERVER}          http://localhost:9595
 #${SERVER}          www.saucedemo.com
 #${BROWSER}        Firefox
 ${BROWSER}        headlessfirefox
