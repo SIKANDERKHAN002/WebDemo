@@ -5,6 +5,7 @@ Documentation     A resource file with reusable keywords and variables.
 ...               domain specific language. They utilize keywords provided
 ...               by the imported SeleniumLibrary.
 Library           SeleniumLibrary
+Library           OperatingSystem
 
 *** Variables ***
 #${SERVER}         localhost:9595
@@ -25,7 +26,8 @@ ${ERROR URL}       http://${SERVER}/error.html
 Open Browser To Login Page
     Log   ${LOGIN URL}
     Log   ${SERVER}
-    ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir=login_tests)    tempfile
+    ${current_dir}=   Set Variable    ${CURDIR}
+    ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir='${current_dir}')    tempfile
     Log   ${temp_dir}
     ${options}=     Evaluate      sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${options}    add_argument    --user-data-dir=${temp_dir}
