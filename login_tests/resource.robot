@@ -25,8 +25,11 @@ ${ERROR URL}       http://${SERVER}/error.html
 Open Browser To Login Page
     Log   ${LOGIN URL}
     Log   ${SERVER}
-    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${options}    add_argument    --incognito
+    ${temp_dir}=    Evaluate      tempfile.mkdtemp()    tempfile
+    Log   ${temp_dir}
+    ${options}=     Evaluate      sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method      ${options}    add_argument    --user-data-dir=${temp_dir}
+    #Call Method     ${options}    add_argument    --incognito
     Create WebDriver    Chrome    options=${options}   
     #Open Browser    https://www.saucedemo.com   Chrome
     #Open Browser    https://www.saucedemo.com   Chrome
