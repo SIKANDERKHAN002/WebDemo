@@ -8,10 +8,10 @@ Library           SeleniumLibrary
 Library           OperatingSystem
 
 *** Variables ***
-${SERVER}          http://localhost:9595
+${SERVER}          localhost:9595
 #${SERVER}          www.saucedemo.com
 #${BROWSER}        Firefox
-${BROWSER}        headlessfirefox
+#${BROWSER}        headlessfirefox
 ${DELAY}           0
 ${VALID USER}      demo
 ${VALID PASSWORD}    mode
