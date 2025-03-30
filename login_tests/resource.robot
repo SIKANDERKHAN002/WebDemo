@@ -39,13 +39,16 @@ Open Browser To Login Page
     #Open Browser    https://www.saucedemo.com   Chrome
     #Open Browser    https://www.saucedemo.com   Chrome
     Go To    ${LOGIN URL}
+    Capture Page Screenshot    loginUrl.png
     Sleep   10s
     #Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
+    Capture Page Screenshot    loginUrl2.png
 
 Login Page Should Be Open
     Title Should Be    Login Page
+    Capture Page Screenshot    loginUrl3.png
 
 Go To Login Page
     Go To    ${LOGIN URL}
