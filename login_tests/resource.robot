@@ -39,7 +39,7 @@ Open Browser To Login Page
     #Open Browser    https://www.saucedemo.com   Chrome
     #Open Browser    https://www.saucedemo.com   Chrome
     Go To    ${LOGIN URL}
-    sleep 10s
+    Sleep   10s
     #Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
