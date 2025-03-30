@@ -16,7 +16,7 @@ ${DELAY}           0
 ${VALID USER}      demo
 ${VALID PASSWORD}    mode
 #${LOGIN URL}       https://${SERVER}/
-${LOGIN URL}       ${SERVER}
+${LOGIN URL}       http://${SERVER}/
 ${WELCOME URL}     http://${SERVER}/welcome.html
 ${ERROR URL}       http://${SERVER}/error.html
 #${ExtraArgument}   Dell
@@ -38,7 +38,8 @@ Open Browser To Login Page
     Create WebDriver    Chrome    options=${options}   
     #Open Browser    https://www.saucedemo.com   Chrome
     #Open Browser    https://www.saucedemo.com   Chrome
-    Go To    ${SERVER}
+    Go To    ${LOGIN URL}
+    sleep 10s
     #Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
