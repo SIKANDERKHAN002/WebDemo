@@ -21,9 +21,6 @@ ${ERROR URL}        http://${SERVER}/error.html
 *** Keywords ***
  Open Browser To Login Page   
     Log   ${LOGIN URL}
-    #Below  2 lines are for linux  
-    #${current_dir}    Set Variable    ${CURDIR}
-    #${temp_dir}       Evaluate        tempfile.mkdtemp(dir='${current_dir}')    tempfile
     ${current_dir}=   Set Variable    ${CURDIR}
     ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir='${current_dir}')    tempfile
  
