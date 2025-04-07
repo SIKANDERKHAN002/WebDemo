@@ -22,16 +22,16 @@ ${ERROR URL}        http://${SERVER}/error.html
  Open Browser To Login Page   
     Log   ${LOGIN URL}
     #Below  2 lines are for linux  
-    ${current_dir}=   Set Variable    ${CURDIR}
-    ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir='${current_dir}')    tempfile
+    #${current_dir}=   Set Variable    ${CURDIR}
+    #${temp_dir}=    Evaluate      tempfile.mkdtemp(dir='${current_dir}')    tempfile
     Log   ${temp_dir}
     ${options}=     Evaluate       sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method     ${options}     add_argument    --user-data-dir\=${temp_dir}
     Call Method     ${options}     add_argument    --no-sandbox
     #Call Method    ${options}     add_argument    --incognito
     #Create WebDriver    Chrome    options=${options}
-    Open Browser    ${LOGIN URL}    ${BROWSER}
-    #Go To    ${LOGIN URL}
+    #Open Browser    ${LOGIN URL}    ${BROWSER}
+    Go To    ${LOGIN URL}
     Capture Page Screenshot    loginUrl.png
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
