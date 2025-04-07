@@ -8,7 +8,7 @@ Library           SeleniumLibrary
 Library           OperatingSystem
 
 *** Variables ***
-${SERVER}           localhost:7272
+${SERVER}           localhost:9595
 ${BROWSER}          Chrome
 ${DELAY}            0
 ${VALID USER}       demo
