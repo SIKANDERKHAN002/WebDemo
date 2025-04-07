@@ -8,47 +8,42 @@ Library           SeleniumLibrary
 Library           OperatingSystem
 
 *** Variables ***
-${SERVER}          localhost:9595
-#${SERVER}          www.saucedemo.com
-#${BROWSER}        Firefox
-#${BROWSER}        headlessfirefox
-${DELAY}           0
-${VALID USER}      demo
-${VALID PASSWORD}    mode
-#${LOGIN URL}       https://${SERVER}/
-${LOGIN URL}       http://${SERVER}/
-${WELCOME URL}     http://${SERVER}/welcome.html
-${ERROR URL}       http://${SERVER}/error.html
-#${ExtraArgument}   Dell
-#${OneMoreTesting}  Test
-#${ThisIsThird}     Third
+${SERVER}           localhost:7272
+${BROWSER}          Chrome
+${DELAY}            0
+${VALID USER}       demo
+${VALID PASSWORD}   mode
+${LOGIN URL}        http://${SERVER}/
+${WELCOME URL}      http://${SERVER}/welcome.html
+${ERROR URL}        http://${SERVER}/error.html
+
 
 *** Keywords ***
-Open Browser To Login Page
+ Open Browser To Login Page   
     Log   ${LOGIN URL}
-    Log   ${SERVER}
+    #Below  2 lines are for linux  
     ${current_dir}=   Set Variable    ${CURDIR}
     ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir='${current_dir}')    tempfile
     Log   ${temp_dir}
+
     ${options}=     Evaluate      sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${options}    add_argument    --user-data-dir\=${temp_dir}
     Call Method    ${options}    add_argument    --no-sandbox
 
     #Call Method     ${options}    add_argument    --incognito
-    Create WebDriver    Chrome    options=${options}   
-    #Open Browser    https://www.saucedemo.com   Chrome
-    #Open Browser    https://www.saucedemo.com   Chrome
-    Go To    ${LOGIN URL}
+    #Create WebDriver    Chrome    options=${options}
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    #Go To    ${LOGIN URL}
     Capture Page Screenshot    loginUrl.png
-    Sleep   10s
-    #Maximize Browser Window
+    Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
     Capture Page Screenshot    loginUrl2.png
 
+
 Login Page Should Be Open
     Title Should Be    Login Page
-    Capture Page Screenshot    loginUrl3.png
+    
 
 Go To Login Page
     Go To    ${LOGIN URL}
