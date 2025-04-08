@@ -29,7 +29,7 @@ Open Browser To Login Page
     Call Method    ${options}    add_argument    --user-data-dir\=${temp_dir}
     Call Method    ${options}    add_argument    --no-sandbox
     Call Method     ${options}    add_argument    --incognito
-    #Create WebDriver    Chrome    options=${options}
+    Create WebDriver    Chrome    options=${options}
     #Open Browser    https://www.saucedemo.com   Chrome
     #Open Browser    ${LOGIN URL}   ${BROWSER}
     Go To    ${LOGIN URL}
