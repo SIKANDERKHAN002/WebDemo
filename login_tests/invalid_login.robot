@@ -10,6 +10,7 @@ Documentation     A test suite containing tests related to invalid login.
 Suite Setup       Open Browser To Login Page
 Suite Teardown    Close Browser
 Test Setup        Go To Login Page
+Test Teardown     Test Teardown All
 Test Template     Login With Invalid Credentials Should Fail
 Resource          resource.robot
 

@@ -32,7 +32,7 @@ Open Browser To Login Page
     #Call Method     ${options}    add_argument    --incognito
     Create WebDriver    Chrome    options=${options}
     #Open Browser    https://www.saucedemo.com   Chrome
-     Open Browser    https://www.saucedemo.com   Chrome
+    Open Browser    https://www.saucedemo.com   Chrome
     #Go To    ${LOGIN URL}
     Capture Page Screenshot    loginUrl.png
     #Sleep   10s
@@ -66,3 +66,7 @@ Submit Credentials
 Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
     Title Should Be    Welcome Page
+
+
+Test Teardown All
+    Close All Browsers
