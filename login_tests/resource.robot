@@ -30,7 +30,7 @@ Open Browser To Login Page
     Call Method     ${options}    add_argument    --no-sandbox
     Call Method     ${options}    add_argument    --incognito
     Call Method     ${options}    add_argument    --ignore-certificate-errors
-    Call Method     ${options}    add_argument    --profile-root=${temp_dir}
+    #Call Method     ${options}    add_argument    --profile-root=${temp_dir}
     
     Create WebDriver    Chrome    options=${options}
     
