@@ -54,7 +54,7 @@ Login Page Should Be Open
     
 
 Go To Login Page
-    Go To    ${LOGIN URL}
+    #Go To    ${LOGIN URL}
     Log   ${LOGIN URL}
     Log   ${SERVER}
     ${current_dir}=   Set Variable    ${CURDIR}
