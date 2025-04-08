@@ -27,7 +27,7 @@ except ImportError:
 
 
 ROOT = join(dirname(abspath(__file__)), 'html')
-PORT = 7272
+PORT = 9595
 
 
 class DemoServer(ThreadingMixIn, HTTPServer):
