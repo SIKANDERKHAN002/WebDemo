@@ -7,7 +7,7 @@ Documentation     A test suite containing tests related to invalid login.
 ...
 ...               This suite also demonstrates using setups and teardowns in
 ...               different levels.
-Suite Setup       Open Browser To Login Page
+#Suite Setup       Open Browser To Login Page
 Suite Teardown    Close Browser
 Test Setup        Go To Login Page
 #Test Teardown     Test Teardown All

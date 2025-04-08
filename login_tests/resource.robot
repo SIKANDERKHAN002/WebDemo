@@ -55,6 +55,31 @@ Login Page Should Be Open
 
 Go To Login Page
     Go To    ${LOGIN URL}
+    Log   ${LOGIN URL}
+    Log   ${SERVER}
+    ${current_dir}=   Set Variable    ${CURDIR}
+    ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir='${current_dir}')    tempfile
+    Log   ${temp_dir}
+    ${options}=     Evaluate      sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method     ${options}    add_argument    --user-data-dir\=${temp_dir}
+    Call Method     ${options}    add_argument    --no-sandbox
+    Call Method     ${options}    add_argument    --incognito
+    Call Method     ${options}    add_argument    --ignore-certificate-errors
+    #Call Method     ${options}    add_argument    --profile-root=${temp_dir}
+    
+    Create WebDriver    Chrome    options=${options}
+    
+    #Open Browser    https://www.saucedemo.com   Chrome
+    #Open Browser    ${LOGIN URL}   ${BROWSER}
+    
+    #Go To    ${LOGIN URL}
+    
+    Capture Page Screenshot    loginUrl.png
+    #Sleep   10s
+    #Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    #Login Page Should Be Open
+    Capture Page Screenshot    loginUrl2.png
     Login Page Should Be Open
 
 Input Username
