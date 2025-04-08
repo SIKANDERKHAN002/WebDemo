@@ -26,13 +26,17 @@ Open Browser To Login Page
     ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir='${current_dir}')    tempfile
     Log   ${temp_dir}
     ${options}=     Evaluate      sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${options}    add_argument    --user-data-dir\=${temp_dir}
-    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method     ${options}    add_argument    --user-data-dir\=${temp_dir}
+    Call Method     ${options}    add_argument    --no-sandbox
     Call Method     ${options}    add_argument    --incognito
+    
     Create WebDriver    Chrome    options=${options}
+    
     #Open Browser    https://www.saucedemo.com   Chrome
     #Open Browser    ${LOGIN URL}   ${BROWSER}
+    
     Go To    ${LOGIN URL}
+    
     Capture Page Screenshot    loginUrl.png
     #Sleep   10s
     #Maximize Browser Window
