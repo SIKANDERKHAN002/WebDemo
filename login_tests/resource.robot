@@ -70,7 +70,7 @@ Go To Login Page
     Create WebDriver    Chrome    options=${options}
     
     #Open Browser    https://www.saucedemo.com   Chrome
-    #Open Browser    ${LOGIN URL}   ${BROWSER}
+    Open Browser    ${LOGIN URL}   ${BROWSER}
     
     #Go To    ${LOGIN URL}
     
