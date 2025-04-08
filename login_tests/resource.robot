@@ -28,7 +28,7 @@ Open Browser To Login Page
     ${options}=     Evaluate      sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method     ${options}    add_argument    --user-data-dir\=${temp_dir}
     Call Method     ${options}    add_argument    --no-sandbox
-    Call Method     ${options}    add_argument    --incognito
+    #Call Method     ${options}    add_argument    --incognito
     
     Create WebDriver    Chrome    options=${options}
     
