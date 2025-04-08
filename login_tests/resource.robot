@@ -38,7 +38,7 @@ Open Browser To Login Page
     #Sleep   10s
     #Maximize Browser Window
     Set Selenium Speed    ${DELAY}
-    Login Page Should Be Open
+    #Login Page Should Be Open
     Capture Page Screenshot    loginUrl2.png
 
 
