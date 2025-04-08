@@ -31,8 +31,8 @@ Open Browser To Login Page
     Call Method     ${options}    add_argument    --incognito
     Create WebDriver    Chrome    options=${options}
     #Open Browser    https://www.saucedemo.com   Chrome
-    Open Browser    ${LOGIN URL}   ${BROWSER}
-    #Go To    ${LOGIN URL}
+    #Open Browser    ${LOGIN URL}   ${BROWSER}
+    Go To    ${LOGIN URL}
     Capture Page Screenshot    loginUrl.png
     #Sleep   10s
     #Maximize Browser Window
