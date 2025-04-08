@@ -26,9 +26,11 @@ Open Browser To Login Page
     ${temp_dir}=    Evaluate      tempfile.mkdtemp(dir='${current_dir}')    tempfile
     Log   ${temp_dir}
     ${options}=     Evaluate      sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method     ${options}    add_argument    --user-data-dir\=${temp_dir}
+    #Call Method     ${options}    add_argument    --user-data-dir\=${temp_dir}
     Call Method     ${options}    add_argument    --no-sandbox
     Call Method     ${options}    add_argument    --incognito
+    Call Method     ${options}    add_argument    --ignore-certificate-errors
+    Call Method     ${options}    add_argument    --profile-root=${temp_dir}
     
     Create WebDriver    Chrome    options=${options}
     
